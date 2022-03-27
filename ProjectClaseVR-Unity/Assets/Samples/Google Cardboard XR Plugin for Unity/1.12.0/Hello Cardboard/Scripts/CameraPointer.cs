@@ -24,10 +24,10 @@ using UnityEngine;
 /// </summary>
 public class CameraPointer : MonoBehaviour
 {
-    private const float _maxDistance = 20.0f;
+    private const float _maxDistance = 50.0f;
     private GameObject _gazedAtObject = null;
 
-    public GameObject animarMenu;
+
 
     /// <summary>
     /// Update is called once per frame.
@@ -39,12 +39,12 @@ public class CameraPointer : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(transform.position, transform.forward, out hit, _maxDistance))
         {
-            
             // GameObject detected in front of the camera.
             if (_gazedAtObject != hit.transform.gameObject)
-            {          
+            {
+
                 if (hit.transform.name == "ButtonLevel0")
-                {
+                { 
                     _gazedAtObject?.SendMessage("OnPointerMenuL0Exit");
                     _gazedAtObject = hit.transform.gameObject;
                     _gazedAtObject.SendMessage("OnPointerMenuL0Enter");
@@ -52,25 +52,38 @@ public class CameraPointer : MonoBehaviour
 
                 if (hit.transform.name == "ButtonQuit")
                 {
+                    
                     _gazedAtObject?.SendMessage("OnPointerMenuQExit");
                     _gazedAtObject = hit.transform.gameObject;
                     _gazedAtObject.SendMessage("OnPointerMenuQEnter");
                 }
 
+                if (hit.transform.name == "ButtonLevel1")
+                {
+                    
+                    //_gazedAtObject?.SendMessage("OnPointerMenuL0Exit");
+                    _gazedAtObject = hit.transform.gameObject;
+                   // _gazedAtObject.SendMessage("OnPointerMenuL0Enter");
+                }
 
                 // New GameObject.
-                _gazedAtObject?.SendMessage("OnPointerExit");
+              /*  _gazedAtObject?.SendMessage("OnPointerExit");
                 _gazedAtObject = hit.transform.gameObject;
                 _gazedAtObject.SendMessage("OnPointerEnter");
-              
+                */
+                if (hit.transform.tag == "Menu")
+                {
+                    _gazedAtObject?.SendMessage("AnimarMenu");
+                }
+
             }
         }
         else
         {
             // No GameObject detected in front of the camera.
-            _gazedAtObject?.SendMessage("OnPointerExit");
+            _gazedAtObject?.SendMessage("DesactivarMenu");
             _gazedAtObject = null;
-            
+              
         }
 
         // Checks for screen touches.
@@ -79,4 +92,6 @@ public class CameraPointer : MonoBehaviour
             _gazedAtObject?.SendMessage("OnPointerClick");
         }
     }
+
+  
 }

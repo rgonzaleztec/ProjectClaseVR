@@ -13,15 +13,13 @@ public class MenuGaze : MonoBehaviour
     private const float _minObjectHeight = 0.5f;
     private const float _maxObjectHeight = 3.5f;
 
-    private bool gaze = false;
-    private Vector3 _startingPosition;
+    public GameObject animarMenu;
+    MenuAnimacion menuAnimado;
 
 
     public void OnPointerMenuQEnter()
     {
      
-        gaze = true;
-        Debug.Log("Tocamos menu..............");
         #if UNITY_EDITOR
             UnityEditor.EditorApplication.isPlaying = false;
         #else
@@ -37,31 +35,38 @@ public class MenuGaze : MonoBehaviour
 
     public void OnPointerExit()
     {
-        gaze = false;
-        Debug.Log("Dejamos de tocar menu");
+
     }
 
     public void OnPointerMenuL0Exit()
     {
-        gaze = false;
-        Debug.Log("Dejamos de tocar menu");
+
     }
 
     public void OnPointerMenuQExit()
     {
-        gaze = false;
-        Debug.Log("Dejamos de tocar menu");
+
     }
 
     private void Update()
     {
-        if (gaze)
-        {
-            ExecuteEvents.Execute(gameObject, new PointerEventData(EventSystem.current), ExecuteEvents.pointerDownHandler);
-        }
+        ExecuteEvents.Execute(gameObject, new PointerEventData(EventSystem.current), ExecuteEvents.pointerDownHandler);
+
     }
     private void Start()
     {
-        _startingPosition = transform.parent.localPosition;
+        menuAnimado = animarMenu.GetComponent<MenuAnimacion>();
+    }
+
+    public void AnimarMenu()
+    {
+        menuAnimado.CargarAnimacion();
+        Debug.Log("Llamo a cargar animacion");
+    }
+
+    public void DesactivarMenu()
+    {
+        menuAnimado.DetenerAnimacion();
+        Debug.Log("Menu desactivado");
     }
 }

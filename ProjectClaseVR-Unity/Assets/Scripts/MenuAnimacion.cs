@@ -7,46 +7,26 @@ public class MenuAnimacion : MonoBehaviour
     // Start is called before the first frame update
 
     Animator miCompAnimacion;
-    private bool m_animar;
-    public GameObject controlmenu;
 
     void Start()
     {
         miCompAnimacion = gameObject.GetComponent<Animator>();
-        m_animar = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (m_animar)
-            CargarAnimacion();
-        else
-            DetenerAnimacion();
-
-
     }
 
-    void CargarAnimacion()
+    public void CargarAnimacion()
     {
 
-        miCompAnimacion.SetBool("activomenu", true);
-    }
-
-    void DetenerAnimacion()
-    {
         miCompAnimacion.SetBool("activomenu", false);
     }
 
-    public void setanimar()
+    public void DetenerAnimacion()
     {
-
-        m_animar = true;    
-    }
-
-    public void desabilitaranimacion()
-    {
-        m_animar = false;  
+        miCompAnimacion.SetBool("activomenu", true);
     }
 
 }
