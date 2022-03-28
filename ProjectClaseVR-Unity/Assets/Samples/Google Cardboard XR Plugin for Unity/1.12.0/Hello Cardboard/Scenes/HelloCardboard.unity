@@ -291,7 +291,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_MoveRepeatDelay: 0.5
   m_MoveRepeatRate: 0.1
-  m_XRTrackingOrigin: {fileID: 959308593}
+  m_XRTrackingOrigin: {fileID: 946232357149514095}
   m_ActionsAsset: {fileID: -944628639613478452, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
   m_PointAction: {fileID: 1054132383583890850, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
   m_MoveAction: {fileID: 3710738434707379630, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
@@ -862,7 +862,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 2
-  m_Camera: {fileID: 959308592}
+  m_Camera: {fileID: 0}
   m_PlaneDistance: 10
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -1053,16 +1053,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!20 &959308592 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 959308592, guid: b32a4cb62aab4804ba0091f6794a818c, type: 3}
-  m_PrefabInstance: {fileID: 946232357149514094}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &959308593 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 959308593, guid: b32a4cb62aab4804ba0091f6794a818c, type: 3}
-  m_PrefabInstance: {fileID: 946232357149514094}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &979449078
 GameObject:
   m_ObjectHideFlags: 0
@@ -1438,7 +1428,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 2
-  m_Camera: {fileID: 959308592}
+  m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -1723,3 +1713,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b32a4cb62aab4804ba0091f6794a818c, type: 3}
+--- !u!4 &946232357149514095 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1260782100925754448, guid: b32a4cb62aab4804ba0091f6794a818c, type: 3}
+  m_PrefabInstance: {fileID: 946232357149514094}
+  m_PrefabAsset: {fileID: 0}

@@ -61,9 +61,9 @@ public class CameraPointer : MonoBehaviour
                 if (hit.transform.name == "ButtonLevel1")
                 {
                     
-                    //_gazedAtObject?.SendMessage("OnPointerMenuL0Exit");
+                    _gazedAtObject?.SendMessage("OnPointerMenuL1Exit");
                     _gazedAtObject = hit.transform.gameObject;
-                   // _gazedAtObject.SendMessage("OnPointerMenuL0Enter");
+                    _gazedAtObject.SendMessage("OnPointerMenuL1Enter");
                 }
 
                 // New GameObject.

@@ -33,12 +33,22 @@ public class MenuGaze : MonoBehaviour
         
     }
 
+    public void OnPointerMenuL1Enter()
+    {
+        SceneManager.LoadScene(3);
+
+    }
     public void OnPointerExit()
     {
 
     }
 
     public void OnPointerMenuL0Exit()
+    {
+
+    }
+
+    public void OnPointerMenuL1Exit()
     {
 
     }

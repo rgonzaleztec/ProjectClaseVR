@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Video;
+using UnityEngine.XR.Management;
 
 
 public class CargarMenu : MonoBehaviour
@@ -22,7 +23,16 @@ public class CargarMenu : MonoBehaviour
         while (true)
             { 
                 yield return new WaitForSeconds(waitTime);
-                print("WaitVideoandLoadScene" + Time.time);
+                XRGeneralSettings.Instance.Manager.InitializeLoader();
+                if (XRGeneralSettings.Instance.Manager.activeLoader == null)
+                {
+                    Debug.LogError("Initializing XR Failed. Check Editor or Player log for details.");
+                }
+                else
+                {
+                    Debug.Log("Starting XR...");
+                    XRGeneralSettings.Instance.Manager.StartSubsystems();
+                }
                 SceneManager.LoadScene(1);
              }
         
