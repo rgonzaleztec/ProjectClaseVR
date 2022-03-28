@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 1260782100925754448}
   - component: {fileID: 4541633783988482975}
   - component: {fileID: 4758350392527393093}
-  - component: {fileID: 245658890608436316}
   - component: {fileID: 8639773175181932041}
   - component: {fileID: 8673987394871716394}
   - component: {fileID: 8300237730438968556}
@@ -30,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3815516827372216896}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.775, z: 0.184}
+  m_LocalPosition: {x: 0, y: 0.91, z: 0.184}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 3476376061199839706}
@@ -88,22 +87,6 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3815516827372216896}
   m_Enabled: 1
---- !u!54 &245658890608436316
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3815516827372216896}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 84
-  m_CollisionDetection: 0
 --- !u!114 &8639773175181932041
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121,7 +104,7 @@ MonoBehaviour:
   m_PoseProviderComponent: {fileID: 0}
   m_TrackingType: 0
   m_UpdateType: 0
-  m_UseRelativeTransform: 0
+  m_UseRelativeTransform: 1
 --- !u!124 &8673987394871716394
 Behaviour:
   m_ObjectHideFlags: 0

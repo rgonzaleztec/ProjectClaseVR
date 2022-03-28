@@ -23,16 +23,6 @@ public class CargarMenu : MonoBehaviour
         while (true)
             { 
                 yield return new WaitForSeconds(waitTime);
-                XRGeneralSettings.Instance.Manager.InitializeLoader();
-                if (XRGeneralSettings.Instance.Manager.activeLoader == null)
-                {
-                    Debug.LogError("Initializing XR Failed. Check Editor or Player log for details.");
-                }
-                else
-                {
-                    Debug.Log("Starting XR...");
-                    XRGeneralSettings.Instance.Manager.StartSubsystems();
-                }
                 SceneManager.LoadScene(1);
              }
         
