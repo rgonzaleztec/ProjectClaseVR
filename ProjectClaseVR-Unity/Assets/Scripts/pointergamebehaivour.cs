@@ -55,6 +55,12 @@ public class pointergamebehaivour : MonoBehaviour
                     StartCoroutine(DestruirEnemigo(hit.transform.gameObject));
                 }
 
+                if (hit.transform.tag =="teleport")
+                {
+                    _gazedAtObject = hit.transform.gameObject;
+                    _gazedAtObject.SendMessage("teleportMove");
+                    _gazedAtObject = null;
+                }
                 tiempotrasncurrido = 0.0f;
             }
         }

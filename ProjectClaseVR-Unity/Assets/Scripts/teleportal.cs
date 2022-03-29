@@ -7,11 +7,6 @@ public class teleportal : MonoBehaviour
     // Start is called before the first frame update
     public GameObject persona;
     public GameObject puntollegada;
-    private void OnCollisionEnter(Collision collision)
-    {
-        Debug.Log("colision en salto " + collision.gameObject.name);
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.name == "Personaje")

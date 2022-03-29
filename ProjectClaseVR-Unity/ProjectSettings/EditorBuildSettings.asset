@@ -12,11 +12,14 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: 26b09c7c7b2e24e4fb28ebcd78ff7695
   - enabled: 1
-    path: Assets/Samples/Google Cardboard XR Plugin for Unity/1.12.0/Hello Cardboard/Scenes/HelloCardboard.unity
-    guid: 145a2a45d7bc746b19cb68410368bf96
+    path: Assets/Scenes/GameRoom.unity
+    guid: 3b729597942b65b4fad2140debdff591
   - enabled: 1
     path: Assets/Scenes/AINavegacion.unity
     guid: 2d81313ea34cb9f4d940b41d1b549caa
+  - enabled: 1
+    path: Assets/Scenes/Navegando.unity
+    guid: fc48d8a02b312e844b96ad4072f1f6c1
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 81f865b8eef87f0449466d27d0e1c8a7, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 09efcf31a4b19044daf51fe416287c3f, type: 2}
