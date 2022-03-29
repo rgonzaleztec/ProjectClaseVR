@@ -67,16 +67,4 @@ public class MenuGaze : MonoBehaviour
     {
         menuAnimado = animarMenu.GetComponent<MenuAnimacion>();
     }
-
-    public void AnimarMenu()
-    {
-        menuAnimado.CargarAnimacion();
-        Debug.Log("Llamo a cargar animacion");
-    }
-
-    public void DesactivarMenu()
-    {
-        menuAnimado.DetenerAnimacion();
-        Debug.Log("Menu desactivado");
-    }
 }
