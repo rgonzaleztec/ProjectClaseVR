@@ -8,7 +8,7 @@ public class pointergamebehaivour : MonoBehaviour
 {
     private const float _maxDistance = 20.0f;
     private GameObject _gazedAtObject = null;
-    public float tiempoclick = 2.0f;
+    public float tiempoclick = 1.0f;
     private float tiempotrasncurrido = 0.0f;
     public Image puntero;
     private int contador = 0;
@@ -55,10 +55,16 @@ public class pointergamebehaivour : MonoBehaviour
                     StartCoroutine(DestruirEnemigo(hit.transform.gameObject));
                 }
 
-                if (hit.transform.tag =="teleport")
+                if (hit.transform.tag =="teleport" && hit.transform.name != "Portal 4")
                 {
                     _gazedAtObject = hit.transform.gameObject;
                     _gazedAtObject.SendMessage("teleportMove");
+                    _gazedAtObject = null;
+                }
+                if (hit.transform.tag =="teleport" && hit.transform.name == "Portal 4")
+                {
+                    _gazedAtObject = hit.transform.gameObject;
+                    _gazedAtObject.SendMessage("teleportEscena");
                     _gazedAtObject = null;
                 }
                 tiempotrasncurrido = 0.0f;

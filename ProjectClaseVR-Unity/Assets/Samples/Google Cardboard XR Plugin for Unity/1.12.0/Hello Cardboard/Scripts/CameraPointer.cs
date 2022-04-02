@@ -98,6 +98,13 @@ public class CameraPointer : MonoBehaviour
                     _gazedAtObject.SendMessage("DetenerAnimacion");
                 }
 
+                 if (hit.transform.tag == "teleport")
+                {
+                    _gazedAtObject?.SendMessage("DetenerAnimacionExit");
+                    _gazedAtObject = hit.transform.gameObject;
+                    _gazedAtObject.SendMessage("DetenerAnimacion");
+                }
+
                 tiempotrasncurrido = 0.0f;
 
 

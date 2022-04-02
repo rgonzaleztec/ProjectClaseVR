@@ -9,7 +9,7 @@ public class teleportingbehaivor : MonoBehaviour
 
     public void teleportMove()
     {
-        _player.transform.position = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
+        _player.transform.position = new Vector3(transform.position.x + 1.5f, transform.position.y, transform.position.z);
     }
 
     public void teleportEscena()
