@@ -8,19 +8,8 @@ public class GrabObjects : MonoBehaviour
     [SerializeField]
     private GameObject _jugador;
     private ParticleSystem _particulas;
+    private GameObject _objetoGrabed; 
 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     private void OnTriggerEnter(Collider other) {
         
@@ -30,7 +19,14 @@ public class GrabObjects : MonoBehaviour
             _particulas = other.gameObject.GetComponentInChildren<ParticleSystem>();
             _particulas.Stop();
             other.gameObject.transform.SetParent(_jugador.transform);
-            other.gameObject.transform.position = _jugador.transform.position;
+            other.gameObject.transform.position = _jugador.transform.position + new Vector3(0,0.5f,0.2f);
+            _objetoGrabed = other.gameObject;
+        }
+
+        if (other.gameObject.tag == "UnGrab")
+        {
+            _objetoGrabed.gameObject.transform.SetParent(null);
+            _objetoGrabed.transform.position = other.transform.position + new Vector3(0,0.2f,0);
         }
     }
 }
