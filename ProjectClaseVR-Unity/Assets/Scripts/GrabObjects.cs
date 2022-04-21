@@ -19,14 +19,18 @@ public class GrabObjects : MonoBehaviour
             _particulas = other.gameObject.GetComponentInChildren<ParticleSystem>();
             _particulas.Stop();
             other.gameObject.transform.SetParent(_jugador.transform);
-            other.gameObject.transform.position = _jugador.transform.position + new Vector3(0,0.5f,0.2f);
+            other.gameObject.transform.position = _jugador.transform.position + new Vector3(0,0.3f,0.2f);
             _objetoGrabed = other.gameObject;
         }
+    }
 
-        if (other.gameObject.tag == "UnGrab")
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "UnGrab")
         {
-            _objetoGrabed.gameObject.transform.SetParent(null);
-            _objetoGrabed.transform.position = other.transform.position + new Vector3(0,0.2f,0);
+          _objetoGrabed.gameObject.transform.SetParent(null);
+          _objetoGrabed.transform.position = collision.transform.position + new Vector3(0, 0.2f, 0);
+          
         }
     }
 }
